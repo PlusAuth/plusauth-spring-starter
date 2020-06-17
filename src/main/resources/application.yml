@@ -1,0 +1,15 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          plusauth:
+            client-id: {YOUR-CLIENT-ID}
+            client-secret: {YOUR-CLIENT-SECRET}
+            scope:
+              - openid
+              - email
+              - profile
+        provider:
+          plusauth:
+            issuer-uri: https://{YOUR-TENANT-NAME}.plusauth.com/

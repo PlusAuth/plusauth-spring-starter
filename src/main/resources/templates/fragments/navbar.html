@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<div class="nav-container" th:fragment="navbar">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="/">Plusauth Starter</a>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto"></ul>
+            <th:block th:if="${user} != null">
+            <li class="nav-item navbar-nav">
+                <a class="nav-link" href="/profile">
+                    Logged in as: <span th:text="${user.email}"></span>
+                </a>
+            </li>
+                <li class="nav-item navbar-nav">
+                <form action="/logout" method="post">
+                    <button type="submit" class="btn btn-text nav-link" role="button">
+                        Logout
+                    </button>
+                </form>
+                </li>
+            </th:block>
+            <li th:if="${user} == null" class="nav-item navbar-nav">
+                <a class="nav-link" href="/oauth2/authorization/plusauth">
+                    Login
+                </a>
+            </li>
+        </div>
+    </nav>
+</div>
+</html>

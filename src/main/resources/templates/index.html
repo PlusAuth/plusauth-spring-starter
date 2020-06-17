@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header"></head>
+<body>
+<div th:replace="fragments/navbar :: navbar"></div>
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-3">Hello, world!</h1>
+        <p>
+            This is a template for a simple login/register system. It includes a
+            simple OpenID Connect Implicit Flow. To view Profile page please login.
+        </p>
+        <p>
+
+
+            <a th:if="${user} != null" class="btn btn-success btn-lg" href="/profile" role="button"
+            >View Profile &raquo;</a
+            >
+
+
+            <a th:if="${user} == null" class="btn btn-primary btn-lg" href="/oauth2/authorization/plusauth" role="button"
+            >Login/Register &raquo;</a
+            >
+
+        </p>
+        <p></p>
+    </div>
+</div>
+</body>
+</html>

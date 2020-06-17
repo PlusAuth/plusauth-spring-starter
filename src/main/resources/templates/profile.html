@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header"></head>
+<body>
+<div th:replace="fragments/navbar :: navbar"></div>
+
+<div class="container">
+    <h3>Welcome <span th:text="${user.email}"></span></h3>
+    <h4>User object:</h4>
+    <pre th:text="${userPrettified}"></pre>
+</div>
+
+</body>
+</html>
