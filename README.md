@@ -19,9 +19,8 @@ Before running the project, you must first follow these steps:
 3) Go to details page of the client that you've just created and set the following fields as:
 * Redirect Uris: http://localhost:8080/login/oauth2/code/plusauth
 * Post Logout Redirect Uris: http://localhost:8080/
+4) Finally change Client Id, Client Secret and Issuer Uri in `application.yml`
 
-
- Finally write down your Client Id and Client Secret for server configuration 
 ## Getting Started
 
 First we need to configure the server. Open 'application.yml' in folder /src/main/resources/.
