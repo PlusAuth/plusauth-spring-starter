@@ -12,23 +12,27 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class MainController {
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String getIndex(Model model, @AuthenticationPrincipal OidcUser principal) {
-        if (principal != null) {
-            model.addAttribute("user", principal.getUserInfo());
-        }
-        return "index";
+  @RequestMapping(value = "/", method = RequestMethod.GET)
+  public String getIndex(Model model, @AuthenticationPrincipal OidcUser principal) {
+    if (principal != null) { // If user logged in
+      model.addAttribute("user", principal.getUserInfo()); // Add logged in user info to model
     }
 
-    @RequestMapping(value = "/profile", method = RequestMethod.GET)
-    public String getProfile(Model model, @AuthenticationPrincipal OidcUser principal) {
-        OidcUserInfo user = principal.getUserInfo();
+    // serve index.html
+    return "index";
+  }
 
-        ObjectMapper mapper = new ObjectMapper();
-        JsonNode userJson = mapper.convertValue(user, JsonNode.class);
+  @RequestMapping(value = "/profile", method = RequestMethod.GET)
+  public String getProfile(Model model, @AuthenticationPrincipal OidcUser principal) {
+    OidcUserInfo user = principal.getUserInfo();
 
-        model.addAttribute("user", user);
-        model.addAttribute("userPrettified", userJson.toPrettyString());
-        return "profile";
-    }
+    ObjectMapper mapper = new ObjectMapper();
+    JsonNode userJson = mapper.convertValue(user, JsonNode.class);
+
+    model.addAttribute("user", user); // Add logged in user info to model
+    model.addAttribute("userPrettified", userJson.toPrettyString());
+
+    // serve profile.html
+    return "profile";
+  }
 }
