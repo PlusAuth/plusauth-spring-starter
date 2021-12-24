@@ -21,7 +21,8 @@ Before running the project, you must first follow these steps:
 * Post Logout Redirect Uris: http://localhost:8080/
 
 
- Finally write down your Client Id and Client Secret for server configuration 
+Finally write down your Client Id and Client Secret for server configuration 
+
 ## Getting Started
 
 First we need to configure the server. Open 'application.yml' in folder /src/main/resources/.
