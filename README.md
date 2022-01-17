@@ -27,7 +27,7 @@
 
 ## About The Project
 
-It is a simple `Spring Boot` project demonstrating basic authentication flows such as register, login, and logout. To keep things simple, Spring Boot is used for the server framework and spring-boot-starter-oauth2-client for authorization.
+It is a simple `Spring Boot` project demonstrating basic authentication flows such as register, login, and logout. To keep things simple, Spring Boot is used for the server framework and spring-boot-starter-oauth2-client for authentication.
 
 ## Prerequisites
 
